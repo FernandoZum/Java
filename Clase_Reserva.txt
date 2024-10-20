@@ -1,0 +1,81 @@
+import java.util.Scanner;
+
+public class Reserva {
+    private String nombreCliente;
+    private int diasEstadia;
+    private String tipoHabitacion;
+    private String estadoReserva;
+
+    public Reserva(String nombreCliente, int diasEstadia, String tipoHabitacion, String estadoReserva) {
+        this.nombreCliente = nombreCliente;
+        this.diasEstadia = diasEstadia;
+        this.tipoHabitacion = tipoHabitacion;
+        this.estadoReserva = estadoReserva;
+    }
+
+    public String getNombreCliente() {
+        return nombreCliente;
+    }
+
+    public void setNombreCliente(String nombreCliente) {
+        this.nombreCliente = nombreCliente;
+    }
+
+    public int getDiasEstadia() {
+        return diasEstadia;
+    }
+
+    public void setDiasEstadia(int diasEstadia) {
+        this.diasEstadia = diasEstadia;
+    }
+
+    public String getTipoHabitacion() {
+        return tipoHabitacion;
+    }
+
+    public void setTipoHabitacion(String tipoHabitacion) {
+        this.tipoHabitacion = tipoHabitacion;
+    }
+
+    public String getEstadoReserva() {
+        return estadoReserva;
+    }
+
+    public void setEstadoReserva(String estadoReserva) {
+        this.estadoReserva = estadoReserva;
+    }
+
+    public String toString() {
+        return "Reserva [Nombre Cliente: " + nombreCliente + ", Días de Estadia: " + diasEstadia +
+                ", Tipo de Habitación: " + tipoHabitacion + ", Estado de Reserva: " + estadoReserva + "]";
+    }
+
+    public void actualizarDatos() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Actualizar los datos de la reserva:");
+        System.out.print("Nuevo Nombre del Cliente (dejar en blanco para no cambiar): ");
+        String nuevoNombre = scanner.nextLine();
+        if (!nuevoNombre.isEmpty()) {
+            this.nombreCliente = nuevoNombre;
+        }
+
+        System.out.print("Nuevo Número de Días de Estadia (dejar en blanco para no cambiar): ");
+        String nuevoDiasEstadia = scanner.nextLine();
+        if (!nuevoDiasEstadia.isEmpty()) {
+            this.diasEstadia = Integer.parseInt(nuevoDiasEstadia);
+        }
+
+        System.out.print("Nuevo Tipo de Habitación (individual/doble/suite) (dejar en blanco para no cambiar): ");
+        String nuevoTipoHabitacion = scanner.nextLine();
+        if (!nuevoTipoHabitacion.isEmpty()) {
+            this.tipoHabitacion = nuevoTipoHabitacion;
+        }
+
+        System.out.print("Nuevo Estado de la Reserva (confirmada/cancelada) (dejar en blanco para no cambiar): ");
+        String nuevoEstadoReserva = scanner.nextLine();
+        if (!nuevoEstadoReserva.isEmpty()) {
+            this.estadoReserva = nuevoEstadoReserva;
+        }
+    }
+}

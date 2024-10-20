@@ -1,0 +1,81 @@
+import java.util.Scanner;
+
+public class Libro {
+    private String titulo;
+    private String autor;
+    private int anioPublicacion;
+    private String estado;
+
+    public Libro(String titulo, String autor, int anioPublicacion, String estado) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.anioPublicacion = anioPublicacion;
+        this.estado = estado;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public int getAnioPublicacion() {
+        return anioPublicacion;
+    }
+
+    public void setAnioPublicacion(int anioPublicacion) {
+        this.anioPublicacion = anioPublicacion;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String toString() {
+        return "Libro [Título: " + titulo + ", Autor: " + autor + ", Año de Publicación: " + anioPublicacion + ", Estado: " + estado + "]";
+    }
+
+    public void actualizarDatos() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Actualizar los datos del libro:");
+        System.out.print("Nuevo Título (dejar en blanco para no cambiar): ");
+        String nuevoTitulo = scanner.nextLine();
+        if (!nuevoTitulo.isEmpty()) {
+            this.titulo = nuevoTitulo;
+        }
+
+        System.out.print("Nuevo Autor (dejar en blanco para no cambiar): ");
+        String nuevoAutor = scanner.nextLine();
+        if (!nuevoAutor.isEmpty()) {
+            this.autor = nuevoAutor;
+        }
+
+        System.out.print("Nuevo Año de Publicación (dejar en blanco para no cambiar): ");
+        String nuevoAnio = scanner.nextLine();
+        if (!nuevoAnio.isEmpty()) {
+            this.anioPublicacion = Integer.parseInt(nuevoAnio);
+        }
+
+        System.out.print("Nuevo Estado (disponible/prestado) (dejar en blanco para no cambiar): ");
+        String nuevoEstado = scanner.nextLine();
+        if (!nuevoEstado.isEmpty()) {
+            this.estado = nuevoEstado;
+        }
+    }
+}
+	

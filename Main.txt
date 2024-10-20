@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Ingrese los datos del libro:");
+        System.out.print("Título: ");
+        String titulo = scanner.nextLine();
+        System.out.print("Autor: ");
+        String autor = scanner.nextLine();
+        System.out.print("Año de publicación: ");
+        int anioPublicacion = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Estado (disponible/prestado): ");
+        String estado = scanner.nextLine();
+
+        Libro libro = new Libro(titulo, autor, anioPublicacion, estado);
+
+        System.out.println("\nInformación del libro:");
+        System.out.println(libro);
+
+        System.out.print("¿Desea actualizar los datos del libro? (sí/no): ");
+        String actualizar = scanner.nextLine();
+        if (actualizar.equalsIgnoreCase("sí")) {
+            libro.actualizarDatos();
+            System.out.println("Datos actualizados del libro:");
+            System.out.println(libro);
+        }
+
+        System.out.println("\nIngrese los datos de la reserva:");
+        System.out.print("Nombre del cliente: ");
+        String nombreCliente = scanner.nextLine();
+        System.out.print("Número de días de estadía: ");
+        int diasEstadia = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Tipo de habitación (individual/doble/suite): ");
+        String tipoHabitacion = scanner.nextLine();
+        System.out.print("Estado de la reserva (confirmada/cancelada): ");
+        String estadoReserva = scanner.nextLine();
+
+        Reserva reserva = new Reserva(nombreCliente, diasEstadia, tipoHabitacion, estadoReserva);
+
+        System.out.println("\nInformación de la reserva:");
+        System.out.println(reserva);
+        
+        System.out.print("¿Desea actualizar los datos de la reserva? (sí/no): ");
+        actualizar = scanner.nextLine();
+        if (actualizar.equalsIgnoreCase("sí")) {
+            reserva.actualizarDatos();
+            System.out.println("Datos actualizados de la reserva:");
+            System.out.println(reserva);
+        }
+    }
+}
